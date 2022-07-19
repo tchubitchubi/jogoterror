@@ -43,9 +43,8 @@ move_up={
 
 [layer_names]
 
-2d_physics/layer_1="Sprite"
-2d_physics/layer_2="background"
-2d_physics/layer_3="Bg-3d"
+2d_physics/layer_1="parede"
+2d_physics/layer_2="jogador"
 
 [physics]
 

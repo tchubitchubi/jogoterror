@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sonic-removebg-preview.png-db0cff49e1423f71d57aa8573fbef89c.stex"
+path="res://.import/sonic.png-93bb992b66300412cc79d1ae3318d034.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sonic-removebg-preview.png"
-dest_files=[ "res://.import/sonic-removebg-preview.png-db0cff49e1423f71d57aa8573fbef89c.stex" ]
+source_file="res://sprites/sonic.png"
+dest_files=[ "res://.import/sonic.png-93bb992b66300412cc79d1ae3318d034.stex" ]
 
 [params]
 

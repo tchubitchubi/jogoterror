@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="colisao" type="StaticBody2D"]
+collision_mask = 2
+
+[node name="forma" type="CollisionPolygon2D" parent="."]
