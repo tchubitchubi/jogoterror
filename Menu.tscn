@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://sprites/menu bg.png" type="Texture" id=2]
+
+[node name="Menu" type="Node2D"]
+
+[node name="MenuBg" type="Sprite" parent="."]
+position = Vector2( 512.5, 298.5 )
+scale = Vector2( 1.24908, 1.28913 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 382.0
+margin_top = 485.0
+margin_right = 645.0
+margin_bottom = 531.0
+text = "Start"
+script = ExtResource( 1 )

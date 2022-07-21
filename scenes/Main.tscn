@@ -1,40 +1,52 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/colisao.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/bg.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/personagem.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/bg-3d.png" type="Texture" id=4]
+[ext_resource path="res://sprites/parede.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bg escada.png" type="Texture" id=5]
 
 [node name="Main" type="Node2D"]
+position = Vector2( -2, -3 )
 
-[node name="background" type="Sprite" parent="."]
+[node name="colisao" parent="." instance=ExtResource( 1 )]
 show_behind_parent = true
-position = Vector2( 512.249, 300 )
+position = Vector2( 538, 222 )
+rotation = 5.48837e-22
+
+[node name="forma" parent="colisao" index="0"]
+show_behind_parent = true
+polygon = PoolVector2Array( -537, -1, -538, 12, 66, 37, 159, -38, 486, -19, 487, -32, 160, -57, 68, 8 )
+
+[node name="background" type="Sprite" parent="colisao"]
+position = Vector2( -26, 79 )
 rotation = -8.60809e-15
 scale = Vector2( 0.222222, 0.173611 )
 texture = ExtResource( 2 )
 
-[node name="personagem" parent="." instance=ExtResource( 3 )]
-position = Vector2( 736, 312 )
-
-[node name="Bg-3d" type="Sprite" parent="."]
-position = Vector2( 512.249, 300 )
-rotation = -1.9082e-21
-scale = Vector2( 1.77556, 1.38222 )
-texture = ExtResource( 4 )
-region_filter_clip = true
-
 [node name="colisaoRodape" parent="." instance=ExtResource( 1 )]
-position = Vector2( 168, 264 )
+show_behind_parent = true
+position = Vector2( -36.0004, 202 )
+scale = Vector2( 1.7669, 1.39607 )
 
 [node name="forma" parent="colisaoRodape" index="0"]
+position = Vector2( 103.181, 32.5171 )
+scale = Vector2( 0.617456, 0.809172 )
 polygon = PoolVector2Array( -168, 56, 320, 128, 334, 117, 334, 133, 320, 144, -167, 69 )
 
-[node name="colisao" parent="." instance=ExtResource( 1 )]
-position = Vector2( 538, 222 )
+[node name="personagem" parent="." instance=ExtResource( 3 )]
+position = Vector2( 763, 334 )
+scale = Vector2( 4, 3 )
 
-[node name="forma" parent="colisao" index="0"]
-polygon = PoolVector2Array( -537, -1, -538, 12, 66, 37, 159, -38, 486, -19, 487, -32, 160, -57, 68, 8 )
+[node name="BgEscada" type="Sprite" parent="."]
+position = Vector2( 512.5, 302.5 )
+scale = Vector2( 0.220703, 0.171586 )
+texture = ExtResource( 5 )
 
-[editable path="colisaoRodape"]
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 309 )
+scale = Vector2( 1.7669, 1.39607 )
+texture = ExtResource( 4 )
+
 [editable path="colisao"]
+[editable path="colisaoRodape"]

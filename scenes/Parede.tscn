@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="Parede" type="StaticBody2D"]
+position = Vector2( 512.087, 299.564 )
+rotation = -8.60809e-15
+collision_mask = 2

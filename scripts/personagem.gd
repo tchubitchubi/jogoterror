@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-onready var sprite = get_node("sprPersonagem")
+onready var sprite = get_node("sprite")
 onready var colisao = get_node("colisao") 
+
 
 export var speed = 350 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
@@ -13,19 +14,27 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
+
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
-		sprite.flip_h = 0
+		velocity = velocity.normalized() * speed
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
-		sprite.flip_h = 1
+		velocity = velocity.normalized() * speed
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
+		velocity = velocity.normalized() * speed
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-
-	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		
+	if velocity == Vector2.ZERO:
+		$AnimationTree.get("parameters/playback").travel("parada")
+	else:
+		$AnimationTree.get("parameters/playback").travel("andando")
+		$AnimationTree.set("parameters/parada/blend_position", velocity)
+		$AnimationTree.set("parameters/andando/blend_position", velocity)
+		
 	
 	sprite.scale.x = 0.1 + position.y/600
 	sprite.scale.y = 0.1 + position.y/600
